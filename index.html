@@ -1,114 +1,286 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
 
 <head>
+  <script src="assets/js/color-modes.js"></script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.111.3">
   <title>Visualizing US Work Visas</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
+
+
+
+
+
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .page-cover-image {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      max-height: 30vh;
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+  </style>
+
+
 </head>
 
 <body>
-  <header>
-    <img class="page-cover-image" src="https://images.unsplash.com/photo-1571442399306-c5717478b3b4?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb"
-      style="object-position:center 50%" />
-    <h1 class="pb-2 border-bottom">Visuailizing US Work Visas</h1>
-    <h4>17% of the US workforce is foreign born labor</h4>
-    <p>Work visas allow foreign workers to work in the US, support the economy and earn a living.</p>
-    <p>If you’re already working or planning to find work in the US, you’ve faced or will face the challenge of applying for a US work visa soon. </p>
-  </header>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
 
-  <section>
-    <h3>Total X applications</h3>
-    <p>for US work visas between 2012 and 2016</p>
-  </section>
 
-  <section>
-    <h3>There're many types of work visas</h3>
-    <p>X most common types of work visas are:</p>
-    <ul>
-      <li><b>H-1B:</b> The H-1B visa is a type of work visa that is granted to foreign workers who have a job offer in a
-        specialty occupation in the United States. A specialty occupation is one that requires the theoretical and
-        practical application of a body of highly specialised knowledge, as well as at least a bachelor's degree or its
-        equivalent in the specific specialty. Some examples of specialty occupations include IT, engineering, and
-        mathematics. The H-1B visa is valid for up to three years, and can be extended for up to six years. It is one of
-        the most common types of work visas issued in the United States.</li>
-      <li>O1</li>
-    </ul>
-    <p>The acceptance rates of different visas is different.</p>
-    <div class='tableauPlaceholder' id='viz1683510959384' style='position: relative'><noscript><a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Visualization-FinalProject-1&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Visualization-FinalProject-1&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Visualization-FinalProject-1&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683510959384');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-  </section>
 
-  <section>
-    <h3>How your nationality affects your chances of getting approved</h3>
-    <p>Your nationality is often a factor of consideration in the approval or denial of your work visa. The most of
-      number of applications come from India by far. But we found the number of applications from a nationality doesn’t
-      seem to be related to the approval rate. </p>
-    <br>
-    <div class="two-columns">
-      <div class="column" style="float:left; width:50%;">
-        <p>5 nationalities with the highest approval rate</p>
-        <ul>
-          <li>Bullet point 1</li>
-          <li>Bullet point 2</li>
-        </ul>
+
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="arrow-right-circle" viewBox="0 0 16 16">
+      <path
+        d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+    </symbol>
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <title>Bootstrap</title>
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+      </path>
+    </symbol>
+  </svg>
+
+  <div class="col-lg-8 mx-auto p-4 py-md-5">
+    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
+      <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+        <span class="fs-1">Visualizing US Work Visas</span>
+      </a>
+    </header>
+
+    <main>
+      <!-- Section 1 -->
+      <h4 class="text-body-emphasis">17% of the US workforce is foreign born labor</h4>
+      <br>
+      <p class="fs-6">Work visas allow foreign workers to work in the US, support the economy and earn a living.</p>
+      <p class="fs-6">If you’re already working or planning to find work in the US, you’ve faced or will face the
+        challenge of applying for a US work visa soon.</p>
+
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Infographic made in Figma</a>
       </div>
-      <div class="column" style="float:right; width:50%;">
-        <p>5 nationalities with the lowest approval rate</p>
-        <ul>
-          <li>Bullet point 1</li>
-          <li>Bullet point 2</li>
-        </ul>
-      </div>
-      <div class='tableauPlaceholder' id='viz1683512868919' style='position: relative'><noscript><a href='#'><img alt='Sheet 5 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VisaApplicationsperCountry&#47;Sheet5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='VisaApplicationsperCountry&#47;Sheet5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VisaApplicationsperCountry&#47;Sheet5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683512868919');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-      <div class='tableauPlaceholder' id='viz1683512975939' style='position: relative'><noscript><a href='#'><img alt='Sheet 6 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ap&#47;ApprovalRatevsCountry&#47;Sheet6&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ApprovalRatevsCountry&#47;Sheet6' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ap&#47;ApprovalRatevsCountry&#47;Sheet6&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683512975939');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-    </section>
 
-  <section>
-    <h3>Your occupation also plays a role</h3>
-    <p>Your occupation determines what type of visa you need to apply for. It also is a factor of consideration in
-      deciding whether your application is accepted or not. </p>
-    <br>
-    <p>But let’s dig deeper into how this changes with nationality.</p>
-    <br>
-    <p>For each profession, are there preferences for hiring?</p>
-    <div class="three-columns" style="display:flex; justify-content:space-between;">
-      <div class="column" style="width:30%;">
-        <p>Tech</p>
-        <ul>
-          <li>Bullet point 1</li>
-          <li>Bullet point 2</li>
-        </ul>
-      </div>
-      <div class="column" style="width:30%;">
-        <p>Management</p>
-        <ul>
-          <li>Bullet point 1</li>
-          <li>Bullet point 2</li>
-        </ul>
-      </div>
-      <div class="column" style="width:30%;">
-        <p>Finance</p>
-        <ul>
-          <li>Bullet point 1</li>
-          <li>Bullet point 2</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <hr class="mb-5">
 
-  <section>
-    <h3>Employer name and location</h3>
-    <p>Your employer has a huge role in the consideration of your visa. Some employers are known to hire more people for
-      a particular type of visa. Your desired visa type could be supported better by some employer than others.</p>
-    <br>
-    <p>Some companies also have preference for workers from a particular country. </p>
-  </section>
+      <!-- Section 2 -->
+      <h4 class="text-body-emphasis">There’re many types of work visas</h4>
+      <br>
+      <p>The most common work visas are:</p>
+      <ul>
+        <li>Business work visas</li>
+        <li>Treaty Trader Work Visas (E-1)</li>
+      </ul>
+      <p>The acceptance rates of various work visas differ.</p>
 
-  <section>
-    <h3>Summary</h3>
-  </section>
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Dashboard from Tableau</a>
+      </div>
+
+      <hr class="mb-5">
+
+      <!-- Section 3 -->
+      <h4 class="text-body-emphasis">How nationality affects chances of approval</h4>
+      <br>
+      <p>Your nationality is often a factor of consideration in the approval or denial of your work visa. The most of
+        number of applications come from India by far. But we found the number of applications from a nationality
+        doesn’t seem to be related to the approval rate. </p>
+      <div class="row">
+        <div class="col col-md-4" style="float:left; width:50%;">
+          <p>Highest approval rate</p>
+          <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+          </ul>
+        </div>
+        <div class="col col-md-4" style="float:right; width:50%;">
+          <p>Lowest approval rate</p>
+          <ul>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+            <li>Lorem ipsum</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Map Visualization Dashboard from Tableau</a>
+      </div>
+
+      <hr class="mb-5">
+
+      <!-- Section 4 -->
+      <h4 class="text-body-emphasis">Your occupation also plays a role</h4>
+      <br>
+      <p>Your occupation determines what type of visa you need to apply for. It also is a factor of consideration in
+        deciding whether your application is accepted or not. </p>
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Bar Chart </a>
+      </div>
+
+      <p>But let’s dig deeper into how this changes with nationality.</p>
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Map Visualization</a>
+      </div>
+
+      <p>For each profession, are there preferences for hiring?</p>
+      <div class="row">
+        <div class="column" style="width:33%;">
+          <p>Tech</p>
+          <ul>
+            <li>Bullet point 1</li>
+            <li>Bullet point 2</li>
+          </ul>
+        </div>
+        <div class="column" style="width:33%;">
+          <p>Management</p>
+          <ul>
+            <li>Bullet point 1</li>
+            <li>Bullet point 2</li>
+          </ul>
+        </div>
+        <div class="column" style="width:33%;">
+          <p>Finance</p>
+          <ul>
+            <li>Bullet point 1</li>
+            <li>Bullet point 2</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="mb-5">
+
+      <!-- Section 5 -->
+      <h4 class="text-body-emphasis">Employer name and location</h4>
+      <br>
+      <p>Your employer has a huge role in the consideration of your visa. Some employers are known to hire more people
+        for a particular type of visa. Your desired visa type could be supported better by some employer than others.
+      </p>
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Dashboard from Tableau</a>
+      </div>
+
+      <p>Some companies also have preference for workers from a particular country.</p>
+      <div class="mb-5">
+        <a href="../examples/" class="btn btn-primary btn-lg px-4">Chart</a>
+      </div>
+      <hr class="mb-5">
+
+      <!-- Section 6 -->
+      <h4 class="text-body-emphasis">Summary</h4>
+
+
+    </main>
+  </div>
+
+
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
 
 </html>
