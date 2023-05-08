@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.111.3">
-  <title>Visualizing US Work Visas</title>
+  <title>Visualizing US Green Card Applications</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
 
@@ -141,20 +141,24 @@
     </symbol>
   </svg>
 
+  <img class="page-cover-image" src="https://images.unsplash.com/photo-1571442399306-c5717478b3b4?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/>
   <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-      <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
-        <span class="fs-1">Visualizing US Work Visas</span>
-      </a>
+    <header class="align-items-center pb-3 mb-5 border-bottom">
+        <h1 class="fs-2">Visualizing US Green Card Applications</h1>
     </header>
 
     <main>
-      <!-- Section 1 -->
+      <!-- Section 0 -->
       <h4 class="text-body-emphasis">17% of the US workforce is foreign born labor</h4>
       <br>
-      <p class="fs-6">Work visas allow foreign workers to work in the US, support the economy and earn a living.</p>
-      <p class="fs-6">If you’re already working or planning to find work in the US, you’ve faced or will face the
-        challenge of applying for a US work visa soon.</p>
+      <p class="fs-6">A work visa is a temporary visa that allows foreign workers to come to the United States and work for a specified period of time. However, if a foreign worker wants to work in the U.S. for the long term, they must apply for permanent residency, also known as a Green Card.</p>
+      <p class="fs-6">The process of obtaining a Green Card can be complex and time-consuming. We are diving into the many factors that can affect the approval rate of green card applications.</p>
+      <br>
+
+      <!-- Section 1 -->
+      <h4 class="text-body-emphasis">Total Applications</h4>
+      <br>
+      <p class="fs-6">for US green card applications between ? and ?</p>
 
       <div class="mb-5">
         <a href="../examples/" class="btn btn-primary btn-lg px-4">Infographic made in Figma</a>
@@ -163,17 +167,29 @@
       <hr class="mb-5">
 
       <!-- Section 2 -->
-      <h4 class="text-body-emphasis">There’re many types of work visas</h4>
+      <h4 class="text-body-emphasis">Applications come from various types of work visas</h4>
       <br>
       <p>The most common work visas are:</p>
       <ul>
-        <li>Business work visas</li>
-        <li>Treaty Trader Work Visas (E-1)</li>
+        <li>
+          <b>Foreign Workers with Specialized Skills (H1-B, O1)</b>: for foreign workers in specialty occupations that require specialized knowledge or expertise.
+        </li>
+        <li>
+          <b>Treaty Trader Work Visas (E-1)</b>: available to individuals who are citizens of countries that have a qualifying treaty with the U.S.
+        </li>
+        <li>
+          <b>Intra-Company Transfer Visas (L-1)</b>: allow multinational companies to transfer employees from their foreign offices to their U.S. offices.
+        </li>
+        <li>
+          <b>Business Work Visas (B-1, B-2)</b>: for individuals to enter the United States for the purpose of engaging in business-related activities.
+        </li>
+        <li>
+          <b>Temporary Worker Visas (H-2A, H-2B)</b>: allow foreign nationals to come to the United States temporarily to work in specific occupations or industries.
+        </li>
       </ul>
       <p>The acceptance rates of various work visas differ.</p>
-
-      <div class="mb-5">
-        <a href="../examples/" class="btn btn-primary btn-lg px-4">Dashboard from Tableau</a>
+      <div style="background-color: rgb(232, 243, 251); padding: 20px; border-radius: 10px;">
+        <div class='tableauPlaceholder' id='viz1683549558070' style='position: relative'><noscript><a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Visualization-FinalProject-1&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Visualization-FinalProject-1&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Visualization-FinalProject-1&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683549558070');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
       </div>
 
       <hr class="mb-5">
@@ -181,9 +197,7 @@
       <!-- Section 3 -->
       <h4 class="text-body-emphasis">How nationality affects chances of approval</h4>
       <br>
-      <p>Your nationality is often a factor of consideration in the approval or denial of your work visa. The most of
-        number of applications come from India by far. But we found the number of applications from a nationality
-        doesn’t seem to be related to the approval rate. </p>
+      <p>Nationality is often taken into consideration during the Green Card application process. The most of number of applications come from India by far. However, there appears to be no correlation between the number of applications from a particular nationality and the approval rate of those applications.</p>
       <div class="row">
         <div class="col col-md-4" style="float:left; width:50%;">
           <p>Highest approval rate</p>
@@ -222,7 +236,7 @@
         <a href="../examples/" class="btn btn-primary btn-lg px-4">Bar Chart </a>
       </div>
 
-      <p>But let’s dig deeper into how this changes with nationality.</p>
+      <p>Let’s dig deeper into how this changes with nationality.</p>
       <div class="mb-5">
         <a href="../examples/" class="btn btn-primary btn-lg px-4">Map Visualization</a>
       </div>
@@ -258,7 +272,7 @@
       <h4 class="text-body-emphasis">Employer name and location</h4>
       <br>
       <p>Your employer has a huge role in the consideration of your visa. Some employers are known to hire more people
-        for a particular type of visa. Your desired visa type could be supported better by some employer than others.
+        for a particular type of visa. Your desired visa type could be supported better by some employers than others.
       </p>
       <div class="mb-5">
         <a href="../examples/" class="btn btn-primary btn-lg px-4">Dashboard from Tableau</a>
