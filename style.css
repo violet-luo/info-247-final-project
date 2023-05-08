@@ -1,5 +1,44 @@
 @media only screen {
 	body {
+	  margin: 0;
+	  padding: 0;
+	  font-family: sans-serif;
+	}
+  }
+  
+  .page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+  }
+  
+header {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 1em;
+	border-radius: 4px;
+}
+
+section {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 1em;
+	border-radius: 4px;
+}
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 1em;
+  }
+
+/* @media only screen {
+	body {
 		margin: 2em auto;
 		max-width: 900px;
 		color: rgb(55, 53, 47);
@@ -19,7 +58,7 @@ h3 {
 	letter-spacing: -0.01em;
 	line-height: 1.2;
 	font-weight: 600;
-}
+} */
 
 
 /* html {
