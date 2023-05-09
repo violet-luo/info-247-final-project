@@ -13,10 +13,6 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
 
-
-
-
-
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
@@ -36,9 +32,10 @@
 
     .page-cover-image {
       display: block;
-      object-fit: cover;
+      /* object-fit: cover; */
       width: 100%;
-      max-height: 30vh;
+      height: fit-content;
+      /* max-height: 30vh; */
     }
 
     .b-example-divider {
@@ -99,6 +96,7 @@
     .bd-mode-toggle {
       z-index: 1500;
     }
+
   </style>
 
 
@@ -141,43 +139,34 @@
     </symbol>
   </svg>
 
-  <img class="page-cover-image" src="https://images.unsplash.com/photo-1571442399306-c5717478b3b4?ixlib=rb-4.0.3&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb" style="object-position:center 50%"/>
+  <div class="page-cover-image">
+  <img src="cover.png" style="object-position:center 50%; "/>
+  </div>
+  <br>
   <div class="col-lg-8 mx-auto p-4 py-md-5">
-    <header class="align-items-center pb-3 mb-5 border-bottom">
-        <h1 class="fs-2">Visualizing US Green Card Applications</h1>
-    </header>
 
     <main>
       <!-- Section 0 -->
-      <h4 class="text-body-emphasis">17% of the US workforce is foreign born labor</h4>
+      <h4 class="text-body-emphasis">Labor certification or more commonly known as PERM(Program Electronic Review Management) is the most widely used employment-based opportunity for obtaining a Green Card in the United States. The factors which determine the processing time and issuance of your green card 
+            are your nationality, type of employment, and profession. As you will see, there is a combination of factors determining hopw long will it take for you to receive your green card, making this a long term commitment and justifying its name - PERM.  </h4>
       <br>
-      <p class="fs-6">A work visa is a temporary visa that allows foreign workers to come to the United States and work for a specified period of time. However, if a foreign worker wants to work in the U.S. for the long term, they must apply for permanent residency, also known as a Green Card.</p>
-      <p class="fs-6">The process of obtaining a Green Card can be complex and time-consuming. We are diving into the many factors that can affect the approval rate of green card applications.</p>
-      <br>
-
-      <!-- Section 1 -->
-      <h4 class="text-body-emphasis">Total Applications</h4>
-      <br>
-      <p class="fs-6">for US green card applications between ? and ?</p>
-
-      <div class="mb-5">
-        <a href="../examples/" class="btn btn-primary btn-lg px-4">Infographic made in Figma</a>
+      <div>
+        <img src="firstchart.png" style="width: 900px;"></img>
       </div>
-
-      <hr class="mb-5">
-      
-
+      <br>
       <!-- Section 2 -->
-      <h4 class="text-body-emphasis">Applications come from various types of work visas</h4>
+      <h4 class="text-body-emphasis">Where do these applications come from ? Let us explore the types of work visas</h4>
       <br>
       <div>
       <img src="Group_147.png" style="width: 900px;"></img>
       </div>
       <br>
       <div style="background-color: rgb(232, 243, 251); padding: 20px; border-radius: 10px;">
-        <div class='tableauPlaceholder' id='viz1683589735811' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashoboard_1&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Dashoboard_1&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashoboard_1&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683589735811');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='860px';vizElement.style.height='857px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='860px';vizElement.style.height='857px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        <div class='tableauPlaceholder' id='viz1683595905759' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashoboard_1&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Dashoboard_1&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashoboard_1&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1683595905759');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='860px';vizElement.style.height='857px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='860px';vizElement.style.height='857px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
         <p style="font-size: 11px; color:grey;">Credit: Visa Application Overview Dashboard by Shreena Bhati</p>
       </div>
+      <br>
+      <p>How many applications against different visa types</p>
 
       <hr class="mb-5">
 
