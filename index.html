@@ -28,14 +28,29 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+    } 
+
+    @media (min-width: 992px) {
+      .page-cover-image img {
+        width: 992px;
+      }
     }
 
+    @media (min-width: 1200px) {
+      .page-cover-image img {
+        width: 1200px;
+      }
+
     .page-cover-image {
-      display: block;
-      /* object-fit: cover; */
-      width: 100%;
-      height: fit-content;
-      /* max-height: 30vh; */
+    position: relative;
+    overflow: hidden;
+      }
+
+    .page-cover-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     }
 
     .b-example-divider {
@@ -278,11 +293,14 @@
       <p>In general, the Midwest region has higher approval rates than both coasts.</p>
       <p>Three outliers are Hawaii, New Mexico, and South Carolina, whose overall approval rates were impaired by those of Foreign Workers with Specialized Skills. These individuals have a higher than 80% chance of obtaining a Green Card in most other states, but their chances are considerably reduced in these three states. </p>
       <p>Let’s take Hawaii as an example to uncover the underlying reasons for disparity. Previous charts show that the Education industry has one of the highest approval rates of 84%. However, it is significantly lowered to 50% in Hawaii. It can be inferred that for some professions, location could be a determining factor in the approval of Green Cards.</p>
-    </main>
-  </div>
-<br>
-    <h4>By examining the trends in green card applications and approval rates, we can gain valuable insights into the immigration system and work towards creating a more equitable and fair process for all. It is important to continue to have open and honest conversations about the challenges faced by foreign workers seeking residency in the US and to work towards creating a more inclusive and welcoming environment for everyone.</h4>
+      <br>
+       <h4>By examining the trends in green card applications and approval rates, we can gain valuable insights into the immigration system and work towards creating a more equitable and fair process for all. It is important to continue to have open and honest conversations about the challenges faced by foreign workers seeking residency in the US and to work towards creating a more inclusive and welcoming environment for everyone.</h4>
 
+  
+  </main>
+    </div>
+    <br>
+  
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
 
 
